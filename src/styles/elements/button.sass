@@ -1,0 +1,97 @@
+@import "@/styles/variables.sass"
+
+.button
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $gabbi-pink
+  height: $control-height
+  font-size: $font-size
+  transition: all $tx-duration-sm $tx-ease
+  padding-left: 1em
+  padding-right: 1em
+  transform: translate3d(0, 0%, 0)
+  &:hover
+    color: $gabbi-pink
+  &:active
+    transform: translate3d(0, 3%, 0)
+  &.is-inline
+    background: transparent
+    border-color: transparent
+    &:focus,
+    &:active
+      color: $gabbi-pink
+      box-shadow: none
+  &.is-outline
+    background: transparent
+    border-color: $gabbi-pink
+    &:focus,
+    &:active
+      color: $gabbi-pink
+      box-shadow: none
+  &.is-primary
+    box-shadow: 0 $shadow-offset $shadow-blur $shadow-pink
+    &:focus,
+    &:active
+      box-shadow: 0 $shadow-offset $shadow-blur $shadow-pink !important
+  &.is-primary-inverted
+    color: $gabbi-pink
+    background-color: $gabbi-white
+    box-shadow: 0 $shadow-offset $shadow-blur rgba(0,0,0,0.2)
+    &:focus,
+    &:active
+      box-shadow: 0 $shadow-offset $shadow-blur $shadow-pink !important
+  &.is-primary-light
+    color: $gabbi-pink
+    box-shadow: none
+    border-color: transparent
+    background-color: rgba($gabbi-pink, 0.2)
+    &:focus,
+    &:active
+      box-shadow: none !important
+  &.is-small
+    height: $control-height-sm
+    font-size: $font-size-sm
+    min-width: $control-height-sm
+    border-radius: $border-radius-sm
+    &.is-icon
+      padding: 0
+    &.is-primary
+      box-shadow: 0 $shadow-offset-sm $shadow-blur-sm $shadow-pink
+      &:focus,
+      &:active
+        box-shadow: 0 $shadow-offset-sm $shadow-blur-sm $shadow-pink
+  &.is-medium
+    font-size: $font-size-lg
+    height: $control-height-lg
+    padding: 0 1.25rem
+    border-radius: $border-radius-lg
+    line-height: 24px
+    &.is-primary
+      box-shadow: 0 $shadow-offset-lg $shadow-blur-lg $shadow-pink
+      &:focus,
+      &:active
+        box-shadow: 0 $shadow-offset-lg $shadow-blur-lg $shadow-pink
+    .icon
+      width: 20px
+      height: 20px
+      display: inline-block
+      font-size: 20px
+      margin-right: $margin !important
+    &.is-icon
+      width: $control-height-lg
+      display: flex
+      padding-left: 0.2rem
+      padding-right: 0.2rem
+      align-items: center
+      justify-content: center
+      .icon
+        margin: 0 !important
+
+.field.has-addons
+  .control:not(:first-child)
+    margin-left: 3px
+
+.button
+  .icon:first-child:not(:last-child)
+    margin-left: 0 !important

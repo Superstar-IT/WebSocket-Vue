@@ -1,0 +1,149 @@
+@charset "utf-8"
+
+// Import fonts
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700")
+
+// Import Gabbi variables
+
+@import "@/styles/variables.sass"
+
+// Update Bulma's global variables
+
+$link: $gabbi-pink
+$primary: $gabbi-pink
+$body-color: $gabbi-navy
+$strong-color: $gabbi-navy
+$family-sans-serif: 'Source Sans Pro', Helvetica, Arial, sans-serif
+$control-radius: $border-radius-sm
+$control-radius-small: $border-radius-x-sm
+
+// Import Gabbi mixins
+
+@import "@/styles/mixins.sass"
+
+// Utilities
+
+@import "node_modules/bulma/sass/utilities/_all.sass"
+
+// Base
+
+@import "@/styles/minireset.sass"
+@import "node_modules/bulma/sass/base/generic.sass"
+@import "node_modules/bulma/sass/base/helpers.sass"
+
+// Components
+
+// @import "node_modules/bulma/sass/components/breadcrumb.sass"
+// @import "node_modules/bulma/sass/components/card.sass"
+@import "node_modules/bulma/sass/components/dropdown.sass"
+// @import "node_modules/bulma/sass/components/level.sass"
+// @import "node_modules/bulma/sass/components/list.sass"
+// @import "node_modules/bulma/sass/components/media.sass"
+@import "node_modules/bulma/sass/components/menu.sass"
+// @import "node_modules/bulma/sass/components/message.sass"
+@import "node_modules/bulma/sass/components/modal.sass"
+// @import "node_modules/bulma/sass/components/navbar.sass"
+// @import "node_modules/bulma/sass/components/pagination.sass"
+// @import "node_modules/bulma/sass/components/panel.sass"
+// @import "node_modules/bulma/sass/components/tabs.sass"
+
+// Elements
+
+@import "node_modules/bulma/sass/elements/box.sass"
+@import "node_modules/bulma/sass/elements/button.sass"
+// @import "node_modules/bulma/sass/elements/container.sass"
+@import "node_modules/bulma/sass/elements/content.sass"
+@import "node_modules/bulma/sass/elements/form.sass"
+@import "node_modules/bulma/sass/elements/icon.sass"
+// @import "node_modules/bulma/sass/elements/image.sass"
+// @import "node_modules/bulma/sass/elements/progress.sass"
+// @import "node_modules/bulma/sass/elements/table.sass"
+@import "node_modules/bulma/sass/elements/tag.sass"
+@import "node_modules/bulma/sass/elements/title.sass"
+@import "node_modules/bulma/sass/elements/other.sass"
+
+@import "node_modules/bulma/sass/grid/_all.sass"
+@import "node_modules/bulma/sass/utilities/_all.sass"
+
+// Import Gabbi styles
+
+@import "@/styles/flex.sass"
+@import "@/styles/utils.sass"
+@import "@/styles/elements/button.sass"
+@import "@/styles/elements/input.sass"
+@import "@/styles/typography.sass"
+
+// App styles
+
+html
+  touch-action: manipulation
+
+body,
+html
+  color: $gabbi-navy
+  overflow: hidden
+  min-width: 100%
+  max-height: 100vh
+  background: $gabbi-pink
+
+body
+  user-select: none
+  -webkit-user-select: none
+  -webkit-touch-callout: none
+  -webkit-text-size-adjust: none
+
+*
+  -webkit-overflow-scrolling: touch
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+*[contenteditable]
+  -webkit-user-select: auto !important
+
+a,
+a:link,
+a:hover,
+a:visited
+  color: $gabbi-pink
+
+small
+  font-size: $font-size-sm
+
+.title,
+.content .title
+  color: $gabbi-navy
+  margin-bottom: 1.25rem
+
+.label
+  color: $gabbi-navy
+
+a.link
+  text-decoration: underline
+  &.is-soft
+    color: $gabbi-grey-0
+
+.app
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  position: fixed
+  background: $gabbi-grey-3
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.app-view
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  position: absolute
+
+// Date picker
+
+.datepicker-container
+  *
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important
+  .datepicker-today,
+  .datepicker-day-effect
+    border-radius: $border-radius-sm !important

@@ -1,0 +1,35 @@
+@import "@/styles/variables.sass"
+
+.flex
+  display: flex
+
+  &.is-row
+    align-items: center
+    &.is-spaced-sm
+      > .flex-item
+        margin: 0 ($margin-sm / 2)
+    &.is-spaced
+      > .flex-item
+        margin: 0 ($margin / 2)
+    &.is-spaced,
+    &.is-spaced-sm
+      > .flex-item
+        &:first-child
+          margin-left: 0
+        &:last-child
+          margin-right: 0
+
+  &.is-wide
+    width: 100%
+
+  &.is-column
+    flex-direction: column
+    justify-content: center
+
+  &.is-centered
+    align-items: center
+    justify-content: center
+
+.flex-item
+  &.is-aligned-right
+    margin-left: auto !important

@@ -1,0 +1,72 @@
+{
+  "name": "gabbi.ai",
+  "version": "6.0.3",
+  "private": true,
+  "constants": {
+    "appUrl": "https://s3-us-west-2.amazonaws.com/gabbi-vue/app",
+    "devUrl": ""
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "test": "vue-cli-service serve --port 8080 src/test.js",
+    "build": "vue-cli-service build && cp CHANGELOG.md ./dist/CHANGELOG.md && node scripts/generate-manifest.js",
+    "http": "ttab -G http-server ./dist -c-1 -p8081 && ttab -G ngrok http 8081 -subdomain=gabbi",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "auth0-js": "^9.7.3",
+    "basic-auth-header": "^1.0.1",
+    "bulma": "^0.7.1",
+    "date-fns": "^2.0.0-alpha.16",
+    "libphonenumber-js": "^1.7.4",
+    "localforage": "^1.7.3",
+    "marked": "^0.5.1",
+    "sockette": "^2.0.0",
+    "stacktrace-js": "^2.0.0",
+    "vue": "^2.5.16",
+    "vue-animeta": "^0.1.0",
+    "vue-ctk-date-time-picker": "^2.0.6",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.10",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.10",
+    "@vue/cli-service": "^3.0.0-rc.10",
+    "chai": "^4.2.0",
+    "chalk": "^2.4.1",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.9.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "vue-svg-loader": "^0.5.0",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

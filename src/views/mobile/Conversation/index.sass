@@ -1,0 +1,129 @@
+@import "@/styles/mixins.sass"
+@import "@/styles/variables.sass"
+
+.view-inner
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  position: absolute
+
+.empty,
+.error,
+.loading
+  height: 100%
+
+.loading
+  .flex-item
+    width: 70px
+    height: 70px
+    +loader
+
+.status-badge
+  top: 1rem
+  display: flex
+  z-index: 2
+  position: sticky
+  margin: $margin-x-lg auto
+  transition: top $tx-duration-sm $tx-ease
+  &.has-bad-network
+    top: calc(1rem + 28px)
+
+/deep/
+  .list-item
+    margin-bottom: $margin
+    &.is-left
+      transform-origin: 0 100%
+    &.is-right
+      transform-origin: 100% 100%
+    &:last-child
+      padding-bottom: 28px
+      // this is the computed height of the list views offset
+      // times two because there are top and bottom offsets
+  .lonely-item
+    padding: 0 $margin
+
+.lonely-item-inner
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  position: relative
+  > *
+    border-radius: $border-radius
+  .context-menu
+    position: absolute
+    top: $margin
+    right: $margin
+    &.is-for-note
+      color: darken($gabbi-teal, 10)
+
+.scroll-button
+  width: 32px
+  height: 32px !important
+  right: $margin
+  bottom: $margin * 2
+  padding: 0
+  position: absolute
+  font-size: 16px !important
+
+.audio-player
+  margin-bottom: $margin-lg
+
+.bad-network
+  top: 0
+  left: 0
+  color: $gabbi-white
+  width: 100%
+  height: 28px
+  z-index: 1
+  position: absolute
+  font-size: $font-size-sm
+  background: $red
+  text-align: center
+  line-height: 28px
+
+.email-content
+  width: 100%
+  height: 100%
+  position: relative
+  padding-bottom: $margin-lg
+
+.email-outer
+  flex: 1
+  margin: calc(-#{$margin} - 8px)
+  margin-top: $margin
+  padding: $margin
+  border-top: solid 1px $gabbi-grey-2
+  background: $gabbi-grey-3
+
+.email-iframe
+  width: 100%
+  height: 100%
+
+/* Transitions */
+
+.button-slide-enter-active,
+.button-slide-leave-active
+  transition: all $tx-duration $tx-ease
+
+.button-slide-enter,
+.button-slide-leave-to
+  opacity: 0
+  transform: translate3d(0, -50%, 0)
+
+.fade-enter-active,
+.fade-leave-active
+  transition: opacity $tx-duration-sm $tx-ease
+
+.fade-enter,
+.fade-leave-to
+  opacity: 0
+
+.network-slide-enter-active,
+.network-slide-leave-active
+  transition: all $tx-duration-sm $tx-ease
+
+.network-slide-enter,
+.network-slide-leave-to
+  transform: translateY(-100%)

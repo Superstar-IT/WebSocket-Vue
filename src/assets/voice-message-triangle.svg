@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="18px" viewBox="0 0 17 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="voice-message-triangle" transform="translate(0.000000, -1.000000)" fill="#E05EAA">
+            <path d="M10.2429229,2.97721838 L17.2608489,15.0079486 C17.8174095,15.9620525 17.495137,17.1866879 16.5410332,17.7432485 C16.235161,17.9216739 15.8874004,18.0156907 15.5332911,18.0156907 L1.49743914,18.0156907 C0.392869635,18.0156907 -0.502560865,17.1202602 -0.502560865,16.0156907 C-0.502560865,15.6615814 -0.408544075,15.3138208 -0.230118665,15.0079486 L6.78780734,2.97721838 C7.34436794,2.02311455 8.56900334,1.70084206 9.52310724,2.25740263 C9.82111444,2.4312402 10.0690853,2.67921111 10.2429229,2.97721838 Z" id="Triangle" transform="translate(8.515528, 10.000163) rotate(90.000000) translate(-8.515528, -10.000163) "></path>
+        </g>
+    </g>
+</svg>

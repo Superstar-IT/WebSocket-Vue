@@ -1,0 +1,95 @@
+@import "@/styles/variables.sass"
+
+.input,
+.select:not(.is-multiple) select
+  color: $gabbi-navy
+  height: $control-height
+  padding-left: 1em
+  border-color: $gabbi-grey-2
+  background-color: $gabbi-grey-2
+  transition: border-color $tx-duration-sm $tx-ease, box-shadow $tx-duration-sm $tx-ease, background-color $tx-duration-sm $tx-ease
+  &:hover
+    border-color: $gabbi-pink
+  &:focus,
+  &:focus:hover
+    border-color: $gabbi-pink
+    background-color: $gabbi-white
+  &.is-medium
+    font-size: $font-size-lg
+    height: $control-height-lg
+    padding: 0 1.25rem
+    border-radius: $border-radius-lg
+    line-height: 24px
+
+.input
+  padding-right: 1em
+
+.select:not(.is-multiple),
+.select:not(.is-multiple) select
+  width: 100%
+  height: $control-height
+
+.select:not(.is-multiple)
+  &:not(.is-loading)
+    &::after
+      border-color: $gabbi-grey-0
+    &:focus,
+    &:hover,
+    &:active
+      &::after
+        border-color: $gabbi-grey-0
+
+.control
+  &.has-icons-right
+    .icon
+      top: 2px !important
+      right: 2px !important
+  &.has-action-icons
+    .icon
+      pointer-events: auto !important
+  &.has-placeholder
+    position: relative
+    .placeholder
+      top: 50%
+      color: $gabbi-grey-0
+      height: 1rem
+      z-index: 3
+      position: absolute
+      font-size: $font-size-sm
+      transform: translateY(-0.5rem)
+      line-height: 1rem
+      pointer-events: none
+    .input + .placeholder
+      right: $margin
+    .select + .placeholder
+      right: 2.75rem
+
+.field
+  &.is-stacked
+    position: relative
+    .control
+      margin-bottom: 2px
+      .input,
+      .select:not(.is-multiple) select
+        z-index: 0
+        &:hover
+          z-index: 1
+        &:focus,
+        &:active
+          z-index: 2
+        &.is-danger
+          z-index: 3
+      &:first-of-type:not(:only-of-type)
+        .input,
+        .select:not(.is-multiple) select
+          border-bottom-left-radius: 0
+          border-bottom-right-radius: 0
+      &:last-of-type:not(:only-of-type)
+        .input,
+        .select:not(.is-multiple) select
+          border-top-left-radius: 0
+          border-top-right-radius: 0
+      &:not(:first-of-type):not(:last-of-type)
+        .input,
+        .select:not(.is-multiple) select
+          border-radius: 0

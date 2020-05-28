@@ -1,0 +1,42 @@
+cache:
+  key: "gabbi"
+  paths:
+  - node_modules/
+dev:
+  script:
+  - npm i -g @vue/cli
+  - mkdir ~/.aws/
+  - touch ~/.aws/credentials
+  - printf "[eb-cli]\naws_access_key_id = %s\naws_secret_access_key = %s\n" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+  - touch ~/.aws/config
+  - printf "[profile default]\nregion=ca-central-1\noutput=json" >> ~/.aws/config
+  - export PATH=~/.local/bin:$PATH
+  - source ~/.bashrc
+  - npm i
+  - npm run build
+  - aws s3 sync --acl public-read dist s3://vue-components/gabbi-vue/dev/
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id E2RPUBJ2ZDUSV3 --paths /*
+  - rm -rf ~/.aws/
+  - rm -rf dist
+  only:
+    - dev
+app:
+  script:
+  - npm i -g @vue/cli
+  - mkdir ~/.aws/
+  - touch ~/.aws/credentials
+  - printf "[eb-cli]\naws_access_key_id = %s\naws_secret_access_key = %s\n" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+  - touch ~/.aws/config
+  - printf "[profile default]\nregion=ca-central-1\noutput=json" >> ~/.aws/config
+  - export PATH=~/.local/bin:$PATH
+  - source ~/.bashrc
+  - npm i
+  - npm run build
+  - aws s3 sync --acl public-read dist s3://vue-components/gabbi-vue/
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id E35X2EVMDM0PH --paths /*
+  - rm -rf ~/.aws/
+  - rm -rf dist
+  only:
+    - app

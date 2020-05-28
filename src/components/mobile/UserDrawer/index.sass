@@ -1,0 +1,11 @@
+@import "@/styles/variables.sass"
+
+.drawer-slide-enter-active,
+.drawer-slide-leave-active
+  .user-drawer .drawer-close .button
+    transition: all $tx-duration
+.drawer-slide-enter,
+.drawer-slide-leave-to
+  .user-drawer .drawer-close .button
+    opacity: 0
+    transform: scale(0.5)
