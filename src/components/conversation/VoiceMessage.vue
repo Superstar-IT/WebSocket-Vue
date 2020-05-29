@@ -68,12 +68,14 @@ export default {
     status () {
       const { call } = this
       const status = call.status.status
-
-      if (status === 'in-progress') {
-        return 'in-progress'
-      } else if (status === 'completed') {
+      if(status)
+        if (status === 'in-progress') {
+          return 'in-progress'
+        } else if (status === 'completed') {
+          return 'completed'
+        }
+      else
         return 'completed'
-      }
 
       return 'connecting'
     },

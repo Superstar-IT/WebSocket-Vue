@@ -31,6 +31,7 @@ export default {
     },
 
     end ({ commit }) {
+      commit('SET_STATUS', 'complete')
       commit('CLEAR_CALL')
       commit('SHOW_CALL', false)
     },
